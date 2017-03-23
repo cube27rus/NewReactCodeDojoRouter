@@ -1,8 +1,9 @@
 import React from 'react';
-import books from '../data/books';
+
 function Book(props) {
     const  {topic, slug} = props.params;
-    const  book = books[topic].find(book=>book.slug===slug);
+    const  book = books.find(book=>book.slug===slug);
+    const books=props.route.books[topic];
     return (
         <section className="content book">
             <div className="mdl-grid">

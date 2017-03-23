@@ -1,12 +1,13 @@
 import React from 'react';
 import {Link} from 'react-router';
-import books from '../data/books';
+
 
 function Shelf(props) {
     const topic = props.params.topic;
+    const books=props.route.books[topic];
     return (
         <div className="mdl-grid">
-            {books[topic].map(book =>
+            {books.map(book =>
                 <div key={book.slug} className="book-card mdl-cell mdl-cell--6-col mdl-card mdl-shadow--2dp">
                     <div className="mdl-card__content">
                         <img src={book.cover} className="book-card__image" />
